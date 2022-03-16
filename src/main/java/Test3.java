@@ -15,5 +15,6 @@ public class Test3 implements Runnable {
 
         Thread thread = new Thread(test3);
         thread.start();
+        System.out.println("1231241414");
     }
 }
