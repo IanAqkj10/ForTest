@@ -129,6 +129,8 @@ public class TestHttp {
        q =  q.replace("-", "").substring(0,2);
         System.out.println(q);
         System.out.println("123");
+        System.out.println("123123124");
+        //12312424
     }
 
 
