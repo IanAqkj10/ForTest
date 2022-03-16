@@ -128,7 +128,7 @@ public class TestHttp {
         String q= "123-1";
        q =  q.replace("-", "").substring(0,2);
         System.out.println(q);
-
+        System.out.println("123");
     }
 
 
