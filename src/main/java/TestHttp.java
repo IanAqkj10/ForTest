@@ -4,8 +4,10 @@ import org.junit.Test;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @Description:
@@ -78,7 +80,7 @@ public class TestHttp {
         Person p5 = new Person("qaq", 123);
         Person p6 = new Person("qaq", 48949);
 
-        System.out.println(p1);
+
 
        // System.out.println(p1.equals(p2));
         List<Person> list1 = new ArrayList<>();
@@ -86,12 +88,18 @@ public class TestHttp {
         list1.add(p1);
         list1.add(p2);
         list1.add(p3);
-        list2.add(p4);
-        list2.add(p5);
-        list2.add(p6);
+        list1.add(p4);
+        list1.add(p5);
 
-        List<String> name = list1.stream().map(Person::getName).collect(Collectors.toList());
-//        System.out.println(name);
+//        boolean present = list1.stream().filter(l -> l.getAge() > 100000).findAny().isPresent();
+//        System.out.println(present);校验是否符合条件  .stream().filter(条件).findAny.isPresent()
+        List<List<Person>> splitList = Stream
+                .iterate(0, n -> n + 1).limit(3).parallel()
+                .map(a -> list1.stream()
+                        .skip(a * 2).limit(2).parallel()
+                        .collect(Collectors.toList())).collect(Collectors.toList());
+      splitList.forEach(s-> System.out.println(s));
+
     }
 
     public boolean bijiao(List<Person> l1, List<Person> l2){
@@ -125,16 +133,32 @@ public class TestHttp {
 
     @Test
     public void qaqaq(){
-        String q= "123-1";
-       q =  q.replace("-", "").substring(0,2);
-        System.out.println(q);
-        System.out.println("123");
-        System.out.println("123123124");
-        //12312424
+      double a = 1.02;
+      double b = 1.42;
+        BigDecimal n1 = new BigDecimal(a);
+        BigDecimal n2 = new BigDecimal(b);
+        ArrayList<BB> bb = new ArrayList<>();
+        bb.add(new BB(n1,"123"));
+        bb.add(new BB(n2,"143"));
+        BigDecimal reduce = bb.stream().map(BB::getBigDecimal).reduce(BigDecimal.ZERO, BigDecimal::add);
+        System.out.println(reduce);
     }
 
 
+    public static List<List<?>> splitList(List<?> list, int len) {
+        if (list == null || list.size() == 0 || len < 1) {
+            return null;
+        }
+        List<List<?>> result = new ArrayList<List<?>>();
+        int size = list.size();
+        int count = (size + len - 1) / len;
 
 
+        for (int i = 0; i < count; i++) {
+            List<?> subList = list.subList(i * len, ((i + 1) * len > size ? size : len * (i + 1)));
+            result.add(subList);
+        }
+        return result;
+    }
 }
 
