@@ -1,19 +1,24 @@
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author:IanJ
  * @date:2021/6/27 14:13
  */
-public class Test {
+public class Testt {
 
     @org.junit.Test
-   public void test() throws Exception {
+    public void test() throws Exception {
         String content = "java内存模型(Java Memory Model，JMM)是java虚拟机规范定义的，用来屏蔽掉java程序在各种" +
                 "不同的硬件和操作系统对内存的访问的差异，这样就可以实现java程序在各种不同的平台上都能达到内存访问的一致性。";
         List<String> keywords = keywords(content);
         System.out.println(keywords);
-   }
+    }
 
 
     public List<String> keywords(String content) throws Exception {
@@ -35,6 +40,32 @@ public class Test {
     }
 
 
+    @Test
+    public void testt() {
+        Lock lock = new ReentrantLock();
+        lock.lock();
+        new Thread(() -> {
+            lock.lock();
+            System.out.println("qudao ?"
+            );
+        }).start();
+        lock.unlock();
+        System.out.println("j解锁");
+
+    }
+
+
+    @Test
+    public void qaq() throws InterruptedException {
+        List<String> l = new CopyOnWriteArrayList<>();
+
+
+
+    }
+
 
 
 }
+
+
+
