@@ -2,7 +2,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -56,8 +55,8 @@ public class Testt {
 
 
     @Test
-    public void qaq() throws InterruptedException {
-        List<String> l = new CopyOnWriteArrayList<>();
+    public void qaq() {
+
 
 
 
