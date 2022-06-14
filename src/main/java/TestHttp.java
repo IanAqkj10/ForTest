@@ -1,4 +1,3 @@
-import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
 import java.beans.PropertyDescriptor;
@@ -22,14 +21,14 @@ public class TestHttp {
     @Test
     public void  test() throws Exception {
 
-        HttpClientResult httpClientResult = HttpClientUtils.doGet("http://localhost:8081/test.action");
-        String content = httpClientResult.getContent();
-        System.out.println(content);
-
-        ErrorMsg errorMsg = JSON.parseObject(content, ErrorMsg.class);
-        System.out.println(errorMsg);
-        Map fieldMap = errorMsg.getFieldMap();
-        System.out.println(fieldMap);
+//        HttpClientResult httpClientResult = HttpClientUtils.doGet("http://localhost:8081/test.action");
+//        String content = httpClientResult.getContent();
+//        System.out.println(content);
+//
+//        ErrorMsg errorMsg = JSON.parseObject(content, ErrorMsg.class);
+//        System.out.println(errorMsg);
+//        Map fieldMap = errorMsg.getFieldMap();
+//        System.out.println(fieldMap);
 
     }
 

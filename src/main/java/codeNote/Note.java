@@ -1,4 +1,4 @@
-
+package codeNote;
 
 /**
  * @Description:
@@ -70,4 +70,15 @@ public class Note {
 //        }
 //        return resultList;
 //    }
+
+
+//    String q = "[defewfwe]";
+    //将[]的内容替换成^
+//    String rex = "\\[(.*?)\\]";
+//    String s = q.replaceAll(rex, "^");
+
+//    求两个list的交集  res-》 b
+//    List<String> list = Arrays.asList("a", "b", "c");
+//    List<String> list2 = Arrays.asList("d","b");
+//    List<String> collect = list.stream().filter(t -> list2.contains(t)).collect(Collectors.toList());
 }

@@ -6,8 +6,8 @@
 
 public class TestClassA implements TestA{
 
-    @Override
-    public void qaq() {
-
+    public static void main(String[] args) {
+       TestA a = new TestClassA();
+       a.qaq();
     }
 }

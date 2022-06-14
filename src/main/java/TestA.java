@@ -6,6 +6,8 @@
 
 public interface TestA {
 
-    public abstract void qaq();
+    default void qaq(){
+        System.out.println("qaqq");
+    };
 
 }
