@@ -17,15 +17,6 @@ public class Test4 {
     //DDDDDDD
     public static void main(String[] args) {
 
-
-        try {
-            Person p1 = new Person(null, null);
-            System.out.println(p1);
-            Map<String, Object> map = objectToMap(p1);
-            System.out.println(map);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
     }
 
 
