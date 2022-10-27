@@ -11,7 +11,9 @@ public class Note {
 //    private static final Integer MAX_SEND = 3;
 //
 //    public static void main(String[] args) {
-//        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+//        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7); 错误写法
+//          Integer [] myArray = { 1, 2, 3 };    要使用包装类，非则add，remove，clear报错
+//          List myList = Arrays.stream(myArray).collect(Collectors.toList());
 //        int limit = countStep(list.size());
 //        //方法一：使用流遍历操作
 //        List<List<Integer>> mglist = new ArrayList<>();
