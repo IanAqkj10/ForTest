@@ -1,6 +1,9 @@
 package dir;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * @Description:
@@ -11,8 +14,14 @@ import java.io.File;
 public class DirTest {
 
     public static void main(String[] args) {
-        File f = new File("C:\\Users\\刘键豪\\Desktop\\1");
-        testFile(f);
+        Date endDate = new Date();
+        List<String> dateList = new ArrayList<>();
+        for (int i = -1; i > -7; i--) {
+            Date selectDate = DateUtils.subDate(endDate, i);
+            String strDate = DateUtils.date2Str(selectDate, DateUtils.yyyyMMdd);
+            dateList.add(strDate);
+        }
+        System.out.println(dateList);
     }
 
 
