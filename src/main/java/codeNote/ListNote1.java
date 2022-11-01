@@ -81,12 +81,4 @@ public class ListNote1 {
      *                                         Collectors.reducing((a, b) -> a.getTime() > b.getTime() ? a : b), Optional::get)));
      *
      */
-
-    /**  将name进行分组 统计total属性  返回 List<Bean> ==> list（name1,total(sum)）,(name2,total(sum2)).....
-     *   ds = ds.stream().collect(Collectors.groupingBy(Bean::getName, Collectors.summingDouble(DailyCouTotal::getDTotal)))
-     *             .entrySet().stream()
-     *                 .map(e -> new DailyCouTotal(e.getKey(), e.getValue()))
-     *             .collect(Collectors.toList());
-     */
-
 }
