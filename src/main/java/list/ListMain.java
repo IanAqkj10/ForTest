@@ -1,6 +1,7 @@
 package list;
 
 import ClassDemo.Person;
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
 import java.util.*;
@@ -31,16 +32,9 @@ public class ListMain {
         p1.add(person2);
         p1.add(person3);
         p1.add(person6);
+        String s = JSON.toJSONString(p1);
+        System.out.println(s);
 
-        List<Person> p2 = new ArrayList<>();
-        p2.add(person2);
-        p2.add(person3);
-        p2.add(person4);
-        p2.add(person5);
-        p2.add(person7);
-
-        List<Person> p3 = p1.stream().filter(p2::contains).collect(Collectors.toList());
-        System.out.println(p3);
 
     }
 
