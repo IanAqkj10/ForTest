@@ -7,12 +7,12 @@ import java.util.List;
 /**
  * @Description: ++1111
  * @author:ljh 999
- * @date:2022/9/22 11:50 8888
+ * @date:2022/9/22 11:50
  */
 
 public class MyBeanUtils {
 
-    //https://blog.csdn.net/qq_32786139/article/details/106358162 11111
+    //https://blog.csdn.net/qq_32786139/article/details/106358162
     public static boolean checkNullFileObject(Object object) {
         boolean target = false;
         for (Field f : object.getClass().getDeclaredFields()) {
