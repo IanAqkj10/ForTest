@@ -12,7 +12,7 @@ import java.util.List;
 
 public class MyBeanUtils {
 
-    //https://blog.csdn.net/qq_32786139/article/details/106358162
+    //https://blog.csdn.net/qq_32786139/article/details/106358162 11111
     public static boolean checkNullFileObject(Object object) {
         boolean target = false;
         for (Field f : object.getClass().getDeclaredFields()) {
