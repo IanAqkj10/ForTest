@@ -81,4 +81,15 @@ public class ListNote1 {
      *                                         Collectors.reducing((a, b) -> a.getTime() > b.getTime() ? a : b), Optional::get)));
      *
      */
+
+
+    /**
+     * 将list对象的某个属性按指定字符串间隔拼接  按System.getProperty("line.separator")间隔拼接
+     *      String rest = list.stream().map(m -> StringUtils.isEmpty(m.getCollText()) ? "" : m.getCollText())
+     * //                    .collect(Collectors.joining(System.getProperty("line.separator")));
+     *
+     *
+     *
+     *
+     */
 }

@@ -24,6 +24,7 @@ public class Person implements Serializable {
     private Integer age;
     private Date date;
     private Long qaq;
+    private String note ;
 
     public Person(String name, Integer age) {
         this.name = name;
@@ -37,13 +38,8 @@ public class Person implements Serializable {
     }
 
 
-    @Override
-    public String toString() {
-        return "ClassDemo.Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", date=" + date +
-                ", qaq=" + qaq +
-                '}';
+    public void setNote(String note) {
+        this.note = this.name + this.age.toString() + note;
     }
+
 }

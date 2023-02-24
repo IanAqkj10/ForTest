@@ -1402,6 +1402,18 @@ public class DateUtils extends PropertyEditorSupport {
             e.printStackTrace();
         }
         return res;
-    };
+    }
+
+
+    /**
+     * 时间相减得到小时
+     *
+     * @param date1
+     * @param date2
+     * @return
+     */
+    public static double subDateHour(Date date1, Date date2) {
+        return (date1.getTime() - date2.getTime()) * 1.0 / 1000 / 60 / 60;
+    }
 
 }
